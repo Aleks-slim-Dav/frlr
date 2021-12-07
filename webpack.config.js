@@ -8,25 +8,15 @@ module.exports = {
   entry:{
     index:"/src/index.js",
   },
-  devtool: "inline-source-map",
+  devtool: "source-map",
   devServer: {
-    static: "./dist",
+    historyApiFallback: true,
+    port: 8081,
   },
   output: {
     filename:"js/[name].bundel.js",
     clean: true,
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/index.pug",
-      favicon: "./src/img/favicon.ico",
-    }),
-    new MiniCssExtractPlugin(
-      {
-        filename: "css/[name].css"
-      }
-    ),
-  ],
   module: {
     rules: [
       {
@@ -51,10 +41,22 @@ module.exports = {
         test: /\.pug$/,
         use: [
           {
-            loader: "pug-loader",
+            loader: "simple-pug-loader",
           },
         ],
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.pug",
+      favicon: "./src/img/favicon.ico",
+      filename: "index.html",
+    }),
+    new MiniCssExtractPlugin(
+      {
+        filename: "css/[name].css"
+      }
+    ),
+  ],
 };
