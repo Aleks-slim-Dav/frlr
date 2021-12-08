@@ -2,23 +2,36 @@ const path = require("path");
 const os = require("os");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const glob = require('glob');
+
+const htmlWebpackPlugins = glob.sync('src/pages/**/*.pug')
+  .map((item) => new HtmlWebpackPlugin({
+    template: item.slice(item.indexOf('/') + 1),
+    filename: `${item.slice(item.lastIndexOf('-') + 1, -4)}.html`,
+    chunks: ['index'],
+    inject: 'body',
+  }));
+
 
 module.exports = {
   mode: 'development',
+  context: path.resolve(__dirname, 'src'),
   entry:{
-    index:"/src/index.js",
+    index:"./index.js",
   },
-  devtool: "source-map",
+  devtool: "inline-source-map",
   devServer: {
     historyApiFallback: true,
-    port: 8081,
-  },
-  output: {
-    filename:"js/[name].bundel.js",
-    clean: true,
+    port: 8082,
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        use: [
+          'import-glob-loader',
+        ],
+      },
       {
         test: /\.(png|jpe?g|gif|svg|ico)$/i,
         type: 'asset/resource',
@@ -41,18 +54,14 @@ module.exports = {
         test: /\.pug$/,
         use: [
           {
-            loader: "simple-pug-loader",
+            loader: "pug-loader",
           },
         ],
       },
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/index.pug",
-      favicon: "./src/img/favicon.ico",
-      filename: "index.html",
-    }),
+    ...htmlWebpackPlugins,
     new MiniCssExtractPlugin(
       {
         filename: "css/[name].css"

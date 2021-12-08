@@ -1,0 +1,20 @@
+block variables
+    - var title = 'Это мой сайт'
+    - var head1 = 'Это заголовок по умолчанию'
+    - var content = 'Это контент страницы по умолчанию'
+
+doctype html
+html(lang="ru")
+    head
+        title #{title}
+        block scripts
+    body
+        block header
+            header Это шапка сайта
+        block content
+            main
+                h1 #{head1}
+                div.content
+                    p #{content}
+        block footer
+            footer Это подвал сайта
