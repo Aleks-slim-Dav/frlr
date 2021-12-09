@@ -22,7 +22,7 @@ module.exports = {
   devtool: "inline-source-map",
   devServer: {
     historyApiFallback: true,
-    port: 8082,
+    port: 8080,
   },
   module: {
     rules: [
@@ -62,6 +62,9 @@ module.exports = {
   },
   plugins: [
     ...htmlWebpackPlugins,
+    new HtmlWebpackPlugin({
+    template: "index.pug"
+    }),
     new MiniCssExtractPlugin(
       {
         filename: "css/[name].css"

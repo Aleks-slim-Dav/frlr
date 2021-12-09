@@ -6,15 +6,16 @@ block variables
 doctype html
 html(lang="ru")
     head
-        title #{title}
+        include modules/head
         block scripts
     body
         block header
-            header Это шапка сайта
+            include modules/header
         block content
             main
                 h1 #{head1}
                 div.content
                     p #{content}
         block footer
-            footer Это подвал сайта
+            include modules/footer 
+            
