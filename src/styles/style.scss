@@ -1,9 +1,58 @@
 @import "font.scss";
-body {
-    background-color: #fff;
-    color: 1F2041;
+@import "var.scss";
+@import "../pages/**/*.scss";
+
+html
+{
+    font-size: 62.5%;
+    background-color: #E5E5E5;
+    background: left 3rem top 3rem url(../img/blogo.svg) no-repeat;
+}
+
+h1
+{
+    color: $dark-shade;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 2.9rem;
+    font-style: normal;
+    font-family: Montserrat;
+
+}
+
+h2
+{
+    color: $dark-shade;
+    font-size: 1.9rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.3rem;
     font-family: Montserrat;
 }
+
+h3
+{
+    color: $dark-shade;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    font-family: Montserrat;
+}
+
+body {
+    color: $ds75;
+    font-family: Montserrat;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    font-weight: normal;
+    font-style: normal;
+
+    
+}
+
+
 
 .header {
     display: flex;

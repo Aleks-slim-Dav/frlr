@@ -1,0 +1,89 @@
+
+.ctype
+{
+ display: flex;
+}
+.rectangles {
+    display: flex;
+.rectangle-blocks
+{
+    padding: 14.5rem 0 0 15rem
+}
+
+.rectangle-blocks_block
+{
+    border-radius: 0.6rem;
+    width: 7rem;
+    height: 7rem;
+    margin: 0 0 2rem;
+}
+
+.rectangle-text
+{
+    width: 17.1rem;
+    padding: 14rem 0 0 4rem;
+    span
+    {
+        display: block;
+        font-weight: 400;
+    }
+}
+
+.rectangle-text_color
+{
+    line-height: 2.6rem;
+    display: block;
+    margin-bottom: 3.8rem;
+}
+
+.dark-shade
+{
+    background: $dark-shade;
+}
+
+.ds75
+{
+    background: $ds75;
+}
+.ds50
+{
+    background: $ds50;
+}
+.ds25
+{
+    background: $ds25;
+}
+
+.ds05 
+{
+    background: $ds05;
+}
+
+.purple
+{
+    background: $purple;
+}
+
+.green
+{
+    background: $green;
+}
+}
+
+.text-form
+{
+    display: flex;
+    .text-form_name
+    {
+        display: block;
+        padding: 13rem 0 0 42.3rem;
+        .form_name_m
+        {
+            margin-bottom: 8rem;
+        }
+        h1{
+            font-weight: 400;
+            color: $ds25;
+        }
+    }
+}

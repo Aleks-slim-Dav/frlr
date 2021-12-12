@@ -1,0 +1,30 @@
+extends ../../layouts/layout.pug
+block prepend content
+    main.ctype
+        .rectangles
+            .rectangle-blocks
+                +rectangle(class ="dark-shade")
+                +rectangle(class ="ds75")
+                +rectangle(class ="ds50")
+                +rectangle(class ="ds25")
+                +rectangle(class ="ds05")
+                +rectangle(class ="purple")
+                +rectangle(class ="green")
+            .rectangle-text
+                +rectangletext('Dark Shade 100% ', '#1F2041')
+                +rectangletext('Dark Shade 75% ', '#1F2041')
+                +rectangletext('Dark Shade 50% ', '#1F2041')
+                +rectangletext('Dark Shade 25% ', '#1F2041')
+                +rectangletext('Dark Shade 5% ', '#1F2041')
+                +rectangletext('Purple ', '#BC9CFF')
+                +rectangletext('Green ', '#6FCF97')
+        .text-form
+            .text-form_name
+                h1.form_name_m H1
+                h2.form_name_m H2
+                h3.form_name_m H3
+                .body.form_name_m Body
+                
+    
+
+        

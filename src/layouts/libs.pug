@@ -1,0 +1,6 @@
+mixin rectangle(color)
+    .rectangle-blocks_block(class!=attributes.class)= color
+mixin rectangletext(text="No color", color="#000")
+    h2.rectangle-text_color= text
+        span= color
+    
