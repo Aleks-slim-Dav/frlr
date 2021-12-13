@@ -73,17 +73,13 @@
 .text-form
 {
     display: flex;
-    .text-form_name
+    .text-form-name
     {
         display: block;
         padding: 13rem 0 0 42.3rem;
-        .form_name_m
-        {
-            margin-bottom: 8rem;
-        }
-        h1{
+        .form-name__m{
             font-weight: 400;
             color: $ds25;
-        }
+        }       
     }
 }
