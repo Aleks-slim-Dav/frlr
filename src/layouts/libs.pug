@@ -3,4 +3,7 @@ mixin rectangle(color)
 mixin rectangletext(text="No color", color="#000")
     h2.rectangle-text_color= text
         span= color
-    
+mixin inputText(id, label, val)
+    label
+        H3(for= id)= label
+    input(type="text", name= id, id= id, value= val,autocomplete="off")
